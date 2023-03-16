@@ -1,0 +1,31 @@
+@import "../components/sidebar";
+@import "../components/section";
+@import "../helper/variables";
+@import "../helper/mixins";
+
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body.toggle .sidebar {
+  left: -225px;
+}
+
+body.toggle .section {
+  margin-left: 0;
+  width: 100%;
+}
+
+body {
+  background: #f5f6fa;
+  min-width: 350px;
+
+  @include breakpoints(mobile) {
+   
+  }
+}
+
