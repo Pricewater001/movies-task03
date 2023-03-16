@@ -1,0 +1,22 @@
+.section {
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+    .top_navbar {
+      background: rgb(7, 105, 185);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      .hamburger {
+        a {
+          font-size: 28px;
+          color: #f4fbff;
+          &:hover{
+            color: #a2ecff;
+          }
+          
+        }
+      }
+    }
+  }
