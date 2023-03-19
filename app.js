@@ -47,6 +47,38 @@ async function showGenres() {
   showCategory(genres);
 }
 
+
+
+async function showTrending() {
+  const trendsMovies = await fetchData(
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=e5142e8773e78c96e4e7ae66cab816fc`
+  );
+console.log(trendsMovies.results);
+const divs = document.getElementsByClassName("slide-image");
+
+const divDetals = document.getElementsByClassName("carousel-detalis");
+
+for (let index = 0; index < 3; index++) {
+  const img = document.createElement("img");
+  img.src = `https://image.tmdb.org/t/p/w500/${trendsMovies.results[index].poster_path}`;
+  img.classList.add("slide-image-inner");
+  divs[index].appendChild(img);
+  
+  const h1 = document.createElement("h1");
+  h1.classList.add("carousel-title");
+  h1.textContent = trendsMovies.results[index].title;
+  divDetals[index].appendChild(h1);
+  
+  const p1 = document.createElement("p");
+  p1.classList.add("carousel-description");
+  p1.textContent = trendsMovies.results[index].overview;
+  divDetals[index].appendChild(p1);
+  divs[index].appendChild(divDetals[index]);
+  
+}
+
+}
+
 async function showCategory(genres) {
   const heroSections = document.getElementsByClassName("hero-sections")[0];
   heroSections.classList.add("hero-sections");
@@ -119,5 +151,16 @@ async function showCategory(genres) {
 
     heroSections.appendChild(sectionInner);
   }
+
 }
-showGenres();
+
+function display() {
+  showGenres();
+  showTrending();
+}
+
+display();
+
+
+
+
