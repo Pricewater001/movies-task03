@@ -5,7 +5,7 @@ hamburger.addEventListener("click", function () {
   body.classList.toggle("toggle");
 });
 
-var localWindow = window.matchMedia("(max-width: 700px)");
+var localWindow = window.matchMedia("(min-width: 700px)");
 localWindow.addEventListener("change", () => {
   body.classList.toggle("toggle");
 });
