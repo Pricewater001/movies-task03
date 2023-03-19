@@ -11,10 +11,20 @@
 .wrapper .sidebar .logo {
   padding: 2rem;
 }
+.wrapper .sidebar ul {
+  overflow: scroll;
+  height: 80vh;
+}
+.wrapper .sidebar ul::-webkit-scrollbar {
+  display: none;
+}
+.wrapper .sidebar ul li {
+  cursor: pointer;
+}
 .wrapper .sidebar ul li a {
   display: block;
   padding: 13px 30px;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid #3a8d10;
   color: rgb(241, 237, 237);
   font-size: 16px;
   position: relative;
@@ -105,9 +115,9 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 4;
   font-size: 100px;
-  line-height: 600px;
+  line-height: 367px;
   color: #fff;
 }
 .container .slides .slide-container .carousel-controls label {
@@ -168,6 +178,119 @@ input#img-1:checked ~ .carousel-dots label#img-dot-1,
 input#img-2:checked ~ .carousel-dots label#img-dot-2,
 input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   opacity: 1;
+}
+
+.hero .hero-sections {
+  margin: 2rem;
+  margin: 0rem 4rem;
+}
+.hero .hero-sections .hero-section-category {
+  margin: 1rem 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+.hero .hero-sections .hero-sction-inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.hero .hero-sections .hero-sction-inner .right {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background-color: azure;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index: 8;
+  right: 0;
+}
+.hero .hero-sections .hero-sction-inner .right::after {
+  content: ">";
+}
+@media (max-width: 767px) {
+  .hero .hero-sections .hero-sction-inner .right {
+    display: none;
+  }
+}
+.hero .hero-sections .hero-sction-inner .left {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background-color: azure;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index: 8;
+  left: 0;
+}
+.hero .hero-sections .hero-sction-inner .left::after {
+  content: "<";
+}
+@media (max-width: 767px) {
+  .hero .hero-sections .hero-sction-inner .left {
+    display: none;
+  }
+}
+.hero .hero-sections .hero-sction-inner .hero-sction {
+  margin: 1rem 0rem;
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 1rem;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover {
+  position: absolute;
+  background-color: gray;
+  width: auto;
+  bottom: 4rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  z-index: 5;
+  display: none;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover::before {
+  content: "";
+  border-color: grey transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card span {
+  color: green;
+  margin-left: 6px;
+  text-shadow: 4px 4px 5px grey;
+  max-width: 9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card span:hover ~ .title-hover {
+  display: block;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .slide-image-inner {
+  width: 150px;
+  height: 250px;
+  border-radius: 22px;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction::-webkit-scrollbar {
+  display: none;
 }
 
 * {
