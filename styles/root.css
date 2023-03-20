@@ -191,4 +191,7 @@ body.toggle .section {
 body {
   background: #f5f6fa;
   min-width: 350px;
+}
+.movie {
+  display: flex;
 }/*# sourceMappingURL=root.css.map */
