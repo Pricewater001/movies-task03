@@ -94,7 +94,7 @@
         position: absolute;
         bottom: 5rem;
         left: 4rem;
-        background-color: rgba(0,0,0,0.1);
+        background-color: rgba(0,0,0,0.5);
         padding: 1rem;
         border-radius: 1rem;
         z-index: 4;
@@ -107,8 +107,6 @@
           color:white;
         }
       }
-      
-
     }
 
     .carousel-dots {
@@ -132,10 +130,6 @@
     }
   }
 }
-
-
-
-
 
 input#img-1:checked~.carousel-dots label#img-dot-1,
 input#img-2:checked~.carousel-dots label#img-dot-2,
