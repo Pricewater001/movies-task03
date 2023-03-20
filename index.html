@@ -10,24 +10,27 @@
 </head>
 
 <body id="page-top">
-    <div class="wrapper">
-        <div class="section">
-            <div class="top_navbar">
-                <div class="hamburger">
-                    <a href="#">
-                        <i>&#9776;</i>
-                    </a>
+    <div class="header"></div>
+    <div class="main">
+        <div class="wrapper">
+            <div class="section">
+                <div class="top_navbar">
+                    <div class="hamburger">
+                        <a href="#">
+                            <i>&#9776;</i>
+                        </a>
+                    </div>
+                    <input class="input-search" id="search-input" type="text" placeholder="Search">
                 </div>
-                <input class="input-search" type="text" placeholder="Search">
-            </div>
-            <div class="container">
-                <div>
+                <div class="container">
                     <div class="carousel">
                         <ul class="slides">
-                            <input type="radio" name="radio-buttons" id="img-1" checked />
+                            <input type="radio" name="radio-buttons" id="img-1"  />
                             <li class="slide-container">
                                 <div class="slide-image">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg" alt=""/>
+                                  
+                                    <div class="carousel-detalis">
+                                    </div>
                                 </div>
                                 <div class="carousel-controls">
                                     <label for="img-3" class="prev-slide">
@@ -38,11 +41,12 @@
                                     </label>
                                 </div>
                             </li>
-                            <input type="radio" name="radio-buttons" id="img-2" />
+                            <input type="radio" name="radio-buttons" id="img-2"  checked/>
                             <li class="slide-container">
                                 <div class="slide-image">
-                                    <img
-                                        src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true" alt=""/>
+
+                                    <div class="carousel-detalis">
+                                    </div>
                                 </div>
                                 <div class="carousel-controls">
                                     <label for="img-1" class="prev-slide">
@@ -56,8 +60,8 @@
                             <input type="radio" name="radio-buttons" id="img-3" />
                             <li class="slide-container">
                                 <div class="slide-image">
-                                    <img
-                                        src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg" alt=""/>
+                                    <div class="carousel-detalis">
+                                    </div>
                                 </div>
                                 <div class="carousel-controls">
                                     <label for="img-2" class="prev-slide">
@@ -75,42 +79,24 @@
                             </div>
                         </ul>
                     </div>
+                    <div class="hero">
+                        <div class="hero-sections" id="filter-section"></div>
+                       <div class="hero-sections"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="sidebar">
-            <div class="logo">
-                <h3>Logo</h3>
-            </div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-database"></i></span>
-                        <span class="item">Horror</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="item">academic</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-user-shield"></i></span>
-                        <span class="item">Funny</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-cog"></i></span>
-                        <span class="item">documents</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
 
+            <div class="sidebar">
+                <div class="logo">
+                    <h3>Logo</h3>
+                </div>
+                <ul id="sidebar-categories" >
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <div class="footer"></div>
     <script src="./app.js"></script>
 </body>
 
