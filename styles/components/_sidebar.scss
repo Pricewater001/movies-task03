@@ -14,11 +14,17 @@
       padding: 2rem;
     }
     ul {
+      overflow:scroll; 
+      height:80vh;
+      &::-webkit-scrollbar {
+        display: none;
+    }
       li {
+        cursor: pointer;
         a {
           display: block;
           padding: 13px 30px;
-          border-bottom: 1px solid #10558d;
+          border-bottom: 1px solid #3a8d10;
           color: rgb(241, 237, 237);
           font-size: 16px;
           position: relative;
