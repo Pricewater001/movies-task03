@@ -1,3 +1,19 @@
 .movie {
   display: flex;
+  padding: 3.2rem;
+  .imgBox {
+    img {
+      width: 20rem;
+    }
+  }
+  .txtBox {
+    margin-left: 1.2rem;
+    h3 {
+      span {
+        font-weight: 100;
+        font-size: 1rem;
+        color: grey;
+      }
+    }
+  }
 }

@@ -11,7 +11,8 @@ localWindow.addEventListener("change", () => {
 
 //  Render one movie based on its own ID, the ID will be a variable taken from user input
 async function getMovies() {
-  let url = "movies.json";
+  let url =
+    "https://api.themoviedb.org/3/discover/movie?api_key=e5142e8773e78c96e4e7ae66cab816fc";
   try {
     let res = await fetch(url);
     return await res.json();
@@ -22,15 +23,18 @@ async function getMovies() {
 async function renderMovie() {
   let movies = await getMovies();
   let html = "";
-  movies.forEach((movie) => {
-    if (movie.ID == 1) {
+  movies.results.forEach((movie) => {
+    if (movie.id == 315162) {
       let htmlSegment = `<div class="movie">
       <div class="imgBox">
-      <img src="${movie.Poster}"/>
+      <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}"/>
       </div>
-      <div class="textBox">
-      <h2>${movie.Title}, ${movie.Year}</h2>
-      <h3>${movie.imdbRating}</h3>
+      <div class="txtBox">
+      <h2>${movie.title}, ${movie.release_date}</h2>
+      <h3>${movie.vote_average} / 10 </br> <span>${movie.vote_count}</span>
+      </h3>
+
+      <p>${movie.overview}</p>
       </div>
   </div>`;
 
