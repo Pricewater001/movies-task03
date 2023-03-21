@@ -1,38 +1,24 @@
+// Initial Variables 
+
 var body = document.querySelector("body");
+
 const search = document.getElementById("search-input");
-
-var hamburger = document.querySelector(".hamburger");
-let genres = [];
-
-hamburger.addEventListener("click", function () {
-  body.classList.toggle("toggle");
-});
 
 let localWindow = window.matchMedia('(min-width: 600px)');
 
+const heroSections = document.getElementById("filter-section");
 
+var hamburger = document.querySelector(".hamburger");
 
-localWindow.addEventListener("change", () => {
+let genres = [];
 
-  body.classList.toggle("toggle");
-
-});
-
-addEventListener("load", () => {
-  if(window.screen.width <= 500)
-  body.classList.toggle("toggle");
-});
-
-
-
-
-
-search.addEventListener("input", searchValue);
+// Create Functions 
 
 function leftScroll() {
   const left = document.activeElement.nextElementSibling;
   left.scrollBy(-730, 0);
 }
+
 function rightScroll() {
   const right = document.activeElement.previousElementSibling;
   right.scrollBy(730, 0);
@@ -47,21 +33,39 @@ async function fetchData(baseurl) {
 }
 
 async function searchValue(e) {
-  const value = e.target.value;
-  const heroSections = document.getElementById("filter-section");
+
+  const sectionInner = document.createElement("div");
+  sectionInner.classList.add("hero-sction-inner");
+
+
+  let value = e.target.value;
+  value= value.trim();
+  value = value.replace(/ /g,"%20");
+  
+  console.log(value)
+
+
 
   if(value.length <= 3)
   return;
+
+  const newData = await fetchData(
+    `https://api.themoviedb.org/3/search/movie?api_key=e5142e8773e78c96e4e7ae66cab816fc&language=en-US&query=${value}&page=1&include_adult=true`);
+
+    if( newData.results.length==0){
+      heroSections.innerHTML = '';
+      return;
+    }
   
-  heroSections.innerHTML = '';
+
+    heroSections.innerHTML = '';
 
   const categoryTitle = document.createElement("h1");
   categoryTitle.textContent = "Filter";
   categoryTitle.classList.add("hero-section-category");
   heroSections.appendChild(categoryTitle);
 
-  const sectionInner = document.createElement("div");
-  sectionInner.classList.add("hero-sction-inner");
+ 
 
   const leftButton = document.createElement("button");
   leftButton.classList.add("left");
@@ -70,12 +74,12 @@ async function searchValue(e) {
 
   sectionInner.appendChild(leftButton);
 
-  const newData = await fetchData(
-    `https://api.themoviedb.org/3/search/movie?api_key=e5142e8773e78c96e4e7ae66cab816fc&language=en-US&query=${value}&page=1&include_adult=true`);
-    console.log(newData)
+
 
   let heroSection = document.createElement("div");
     heroSection.classList.add("hero-sction");
+
+  
 
     for (let index = 0; index < newData.results.length; index++) {
       const heroCard = document.createElement("div");
@@ -124,6 +128,15 @@ async function searchValue(e) {
 
 }
 
+function handleSelectedCard(id) {
+  localStorage.setItem("id", id);
+  window.open('http://127.0.0.1:5501/movie-details.html','_self');
+}
+
+function handleSelectedCategory(category) {
+  localStorage.setItem("category", category);
+  window.open('http://127.0.0.1:5501/moveisList.html','_self');
+}
 
 async function showCategory(genres) {
   const heroSections = document.getElementsByClassName("hero-sections")[1];
@@ -167,6 +180,8 @@ async function showCategory(genres) {
 
       heroCard.appendChild(img);
 
+      heroCard.addEventListener("click",()=>handleSelectedCard(newData.results[index].id));
+
       const span1 = document.createElement("span");
       span1.classList.add("card-title");
       span1.textContent = newData.results[index].original_title;
@@ -201,7 +216,6 @@ async function showCategory(genres) {
 
 }
 
-
 async function showGenres() {
   const genrue = await fetchData(
     `https://api.themoviedb.org/3/genre/movie/list?api_key=e5142e8773e78c96e4e7ae66cab816fc&language=en-US`
@@ -216,6 +230,7 @@ async function showGenres() {
     span.classList.add("item");
     a.appendChild(span);
     li.appendChild(a);
+    li.addEventListener("click",()=>handleSelectedCategory(element.name));
     ul.appendChild(li);
   });
   showCategory(genres);
@@ -225,12 +240,9 @@ async function showTrending() {
   const trendsMovies = await fetchData(
     `https://api.themoviedb.org/3/trending/movie/day?api_key=e5142e8773e78c96e4e7ae66cab816fc`
   );
-console.log(trendsMovies.results);
 const divs = document.getElementsByClassName("slide-image");
 
 const divDetals = document.getElementsByClassName("carousel-detalis");
-
-
 
 for (let index = 0; index < 3; index++) {
 
@@ -255,11 +267,32 @@ for (let index = 0; index < 3; index++) {
 }
 
 }
+
 function display() {
   showGenres();
   showTrending();
 }
 
+// Add Events 
+
+hamburger.addEventListener("click", function () {
+  body.classList.toggle("toggle");
+});
+
+localWindow.addEventListener("change", () => {
+
+  body.classList.toggle("toggle");
+
+});
+
+addEventListener("load", () => {
+  if(window.screen.width <= 500)
+  body.classList.toggle("toggle");
+});
+
+search.addEventListener("input", searchValue);
+
+ 
 display();
 
 
