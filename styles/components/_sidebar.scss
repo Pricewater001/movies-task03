@@ -2,7 +2,10 @@
 
 .wrapper {
   .sidebar {
+
     background: $primary-color;
+    border-right: 1px solid $main-color;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -10,33 +13,42 @@
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
+ 
     .logo {
       padding: 2rem;
     }
+
     ul {
-      overflow:scroll; 
-      height:80vh;
+      overflow: scroll;
+      height: 80vh;
+
       &::-webkit-scrollbar {
         display: none;
-    }
+      }
+
       li {
         cursor: pointer;
+
         a {
           display: block;
           padding: 13px 30px;
-          border-bottom: 1px solid #3a8d10;
-          color: rgb(241, 237, 237);
+
+          border-bottom: 1px solid $secondery-color;
+          color: $text-color;
+
           font-size: 16px;
           position: relative;
+
           &:hover,
           &:active {
-            color: #0c7db1;
+
+            color: $main-color;
             background: white;
-            border-right: 2px solid rgb(5, 68, 104);
+            border-right: 2px solid $secondery-color;
+
           }
         }
       }
     }
   }
 }
-
