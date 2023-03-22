@@ -240,6 +240,7 @@ async function showTrending() {
   const trendsMovies = await fetchData(
     `https://api.themoviedb.org/3/trending/movie/day?api_key=e5142e8773e78c96e4e7ae66cab816fc`
   );
+
 const divs = document.getElementsByClassName("slide-image");
 
 const divDetals = document.getElementsByClassName("carousel-detalis");
