@@ -95,17 +95,18 @@
         position: absolute;
         bottom: 5rem;
         left: 4rem;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: $secondery-color;
         padding: 1rem;
         border-radius: 1rem;
         z-index: 4;
         .carousel-title {
-          color: white;
+          color: $text-color;
           margin: 1rem;
+          font-size: 1.2rem;
         }
         .carousel-description {
           width: 90vh;
-          color: white;
+          color: $text-color;
         }
       }
     }
