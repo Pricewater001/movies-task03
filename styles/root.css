@@ -341,6 +341,7 @@ body.toggle .section {
 body {
   background: #1e1e1e;
   min-width: 350px;
+
 }
 
 .movie {
@@ -405,3 +406,4 @@ body {
 .ratings span[data-clicked] ~ span {
   color: rgb(245, 197, 24);
 }/*# sourceMappingURL=root.css.map */
+
