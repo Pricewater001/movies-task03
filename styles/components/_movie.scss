@@ -1,0 +1,68 @@
+.movie {
+  display: flex;
+  padding: 2rem;
+  .imgBox {
+    img {
+      width: 20rem;
+    }
+  }
+  .txtBox {
+    margin-left: 1.2rem;
+    h3 {
+      span {
+        font-weight: 100;
+        font-size: 1rem;
+        color: $grey-color;
+      }
+    }
+    .ratingBox {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.6rem;
+      .lightTxt {
+        font-size: 1rem;
+        color: $grey-color;
+        font-weight: 100;
+        letter-spacing: 1.2px;
+      }
+      .flex {
+        display: flex;
+        gap: 0.5rem;
+        .rateStar {
+          font-size: 1.8rem;
+          color: rgb(245, 197, 24);
+        }
+      }
+    }
+  }
+}
+.ratings-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.ratings {
+  display: flex;
+  flex-direction: row-reverse;
+  span {
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 1.8rem;
+    margin-right: 0.2rem;
+    &:hover {
+      color: rgb(245, 197, 24);
+      ~ {
+        span {
+          color: rgb(245, 197, 24);
+        }
+      }
+    }
+  }
+  span[data-clicked] {
+    color: rgb(245, 197, 24);
+    ~ {
+      span {
+        color: rgb(245, 197, 24);
+      }
+    }
+  }
+}

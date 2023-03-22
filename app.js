@@ -1,8 +1,11 @@
+
 // Initial Variables 
 
 var body = document.querySelector("body");
 
+
 const search = document.getElementById("search-input");
+
 
 let localWindow = window.matchMedia('(min-width: 600px)');
 
@@ -13,6 +16,7 @@ var hamburger = document.querySelector(".hamburger");
 let genres = [];
 
 // Create Functions 
+
 
 function leftScroll() {
   const left = document.activeElement.nextElementSibling;
@@ -46,6 +50,7 @@ async function searchValue(e) {
 
 
 
+
   if(value.length <= 3)
   return;
 
@@ -59,6 +64,7 @@ async function searchValue(e) {
   
 
     heroSections.innerHTML = '';
+
 
   const categoryTitle = document.createElement("h1");
   categoryTitle.textContent = "Filter";
@@ -95,37 +101,39 @@ async function searchValue(e) {
 
       heroCard.appendChild(img);
 
-      const span1 = document.createElement("span");
-      span1.classList.add("card-title");
-      span1.textContent = newData.results[index].original_title;
 
-      heroCard.appendChild(span1);
+    heroCard.appendChild(img);
 
-      const titleHover = document.createElement("div");
-      titleHover.classList.add("title-hover");
-      titleHover.textContent = newData.results[index].original_title;
+    const span1 = document.createElement("span");
+    span1.classList.add("card-title");
+    span1.textContent = newData.results[index].original_title;
 
-      heroCard.appendChild(titleHover);
+    heroCard.appendChild(span1);
 
-      const span2 = document.createElement("span");
-      span2.classList.add("card-rate");
-      span2.textContent = newData.results[index].vote_average;
+    const titleHover = document.createElement("div");
+    titleHover.classList.add("title-hover");
+    titleHover.textContent = newData.results[index].original_title;
 
-      heroCard.appendChild(span2);
+    heroCard.appendChild(titleHover);
 
-      heroSection.appendChild(heroCard);
-    }
+    const span2 = document.createElement("span");
+    span2.classList.add("card-rate");
+    span2.textContent = newData.results[index].vote_average;
 
-    sectionInner.appendChild(heroSection);
+    heroCard.appendChild(span2);
 
-    const rightButton = document.createElement("button");
-    rightButton.addEventListener("click", rightScroll);
-    rightButton.classList.add("right");
+    heroSection.appendChild(heroCard);
+  }
 
-    sectionInner.appendChild(rightButton);
+  sectionInner.appendChild(heroSection);
 
-    heroSections.appendChild(sectionInner);
+  const rightButton = document.createElement("button");
+  rightButton.addEventListener("click", rightScroll);
+  rightButton.classList.add("right");
 
+  sectionInner.appendChild(rightButton);
+
+  heroSections.appendChild(sectionInner);
 }
 
 function handleSelectedCard(id) {
@@ -143,7 +151,6 @@ async function showCategory(genres) {
   heroSections.classList.add("hero-sections");
 
   for (let index = 0; index < genres.length; index++) {
-
     const categoryTitle = document.createElement("h1");
     categoryTitle.textContent = genres[index].name;
     categoryTitle.classList.add("hero-section-category");
@@ -173,8 +180,9 @@ async function showCategory(genres) {
       const img = document.createElement("img");
       img.setAttribute(
         "src",
-        newData.results[index].poster_path?`http://image.tmdb.org/t/p/w500/${newData.results[index].poster_path}` :
-        'https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg'
+        newData.results[index].poster_path
+          ? `http://image.tmdb.org/t/p/w500/${newData.results[index].poster_path}`
+          : "https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg"
       );
       img.classList.add("slide-image-inner");
 
@@ -213,7 +221,6 @@ async function showCategory(genres) {
 
     heroSections.appendChild(sectionInner);
   }
-
 }
 
 async function showGenres() {
@@ -241,32 +248,37 @@ async function showTrending() {
     `https://api.themoviedb.org/3/trending/movie/day?api_key=e5142e8773e78c96e4e7ae66cab816fc`
   );
 
+
 const divs = document.getElementsByClassName("slide-image");
 
 const divDetals = document.getElementsByClassName("carousel-detalis");
 
 for (let index = 0; index < 3; index++) {
 
-  const number = Math.floor(Math.random() * (trendsMovies.results.length-4)+index);
 
-  const img = document.createElement("img");
-  img.src = `https://image.tmdb.org/t/p/w500/${trendsMovies.results[number].poster_path}`;
-  img.classList.add("slide-image-inner");
-  divs[index].appendChild(img);
-  
-  const h1 = document.createElement("h1");
-  h1.classList.add("carousel-title");
-  h1.textContent = trendsMovies.results[number].title;
-  divDetals[index].appendChild(h1);
-  
-  const p1 = document.createElement("p");
-  p1.classList.add("carousel-description");
-  p1.textContent = trendsMovies.results[number].overview;
-  divDetals[index].appendChild(p1);
-  divs[index].appendChild(divDetals[index]);
-  
-}
+  const divDetals = document.getElementsByClassName("carousel-detalis");
 
+  for (let index = 0; index < 3; index++) {
+    const number = Math.floor(
+      Math.random() * (trendsMovies.results.length - 4) + index
+    );
+
+    const img = document.createElement("img");
+    img.src = `https://image.tmdb.org/t/p/w500/${trendsMovies.results[number].poster_path}`;
+    img.classList.add("slide-image-inner");
+    divs[index].appendChild(img);
+
+    const h1 = document.createElement("h1");
+    h1.classList.add("carousel-title");
+    h1.textContent = trendsMovies.results[number].title;
+    divDetals[index].appendChild(h1);
+
+    const p1 = document.createElement("p");
+    p1.classList.add("carousel-description");
+    p1.textContent = trendsMovies.results[number].overview;
+    divDetals[index].appendChild(p1);
+    divs[index].appendChild(divDetals[index]);
+  }
 }
 
 function display() {
@@ -295,7 +307,3 @@ search.addEventListener("input", searchValue);
 
  
 display();
-
-
-
-
