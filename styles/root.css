@@ -1,4 +1,4 @@
-.wrapper .sidebar {
+.sidebar {
   background: #1e1e1e;
   border-right: 1px solid #be3455;
   position: fixed;
@@ -9,20 +9,20 @@
   padding: 20px 0;
   transition: all 0.5s ease;
 }
-.wrapper .sidebar .logo {
+.sidebar .logo {
   padding: 2rem;
 }
-.wrapper .sidebar ul {
+.sidebar ul {
   overflow: scroll;
   height: 80vh;
 }
-.wrapper .sidebar ul::-webkit-scrollbar {
+.sidebar ul::-webkit-scrollbar {
   display: none;
 }
-.wrapper .sidebar ul li {
+.sidebar ul li {
   cursor: pointer;
 }
-.wrapper .sidebar ul li a {
+.sidebar ul li a {
   display: block;
   padding: 13px 30px;
   border-bottom: 1px solid rgba(187, 38, 73, 0.4);
@@ -30,7 +30,7 @@
   font-size: 16px;
   position: relative;
 }
-.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a:active {
+.sidebar ul li a:hover, .sidebar ul li a:active {
   color: #be3455;
   background: white;
   border-right: 2px solid rgba(187, 38, 73, 0.4);
