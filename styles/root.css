@@ -30,8 +30,7 @@
   font-size: 16px;
   position: relative;
 }
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a:active {
+.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a:active {
   color: #be3455;
   background: white;
   border-right: 2px solid rgba(187, 38, 73, 0.4);
@@ -54,9 +53,7 @@
   font-size: 16px;
   line-height: 1.5;
   border: none;
-
   background: rgba(187, 38, 73, 0.4);
-
   background-image: url("../../asset/images/search.png");
   background-repeat: no-repeat;
   background-position: 10px 10px;
@@ -94,8 +91,8 @@
   background: #1e1e1e;
   line-height: 28px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .container .slides {
   display: block;
@@ -127,7 +124,7 @@
   right: 0;
   z-index: 4;
   font-size: 100px;
-  line-height: 600px;
+  line-height: 367px;
   color: #be3455;
 }
 .container .slides .slide-container .carousel-controls label {
@@ -290,12 +287,7 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   z-index: 5;
   display: none;
 }
-.hero
-  .hero-sections
-  .hero-sction-inner
-  .hero-sction
-  .hero-card
-  .title-hover::before {
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover::before {
   content: "";
   border-color: grey transparent transparent;
   border-style: solid;
@@ -315,21 +307,10 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.hero
-  .hero-sections
-  .hero-sction-inner
-  .hero-sction
-  .hero-card
-  span:hover
-  ~ .title-hover {
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card span:hover ~ .title-hover {
   display: block;
 }
-.hero
-  .hero-sections
-  .hero-sction-inner
-  .hero-sction
-  .hero-card
-  .slide-image-inner {
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .slide-image-inner {
   width: 150px;
   height: 250px;
   border-radius: 22px;
@@ -357,9 +338,10 @@ body.toggle .section {
 }
 
 body {
-  background: #1e1e1e;
+  background: #f5f6fa;
   min-width: 350px;
 }
+
 .movie {
   display: flex;
   padding: 2rem;
@@ -421,4 +403,4 @@ body {
 }
 .ratings span[data-clicked] ~ span {
   color: rgb(245, 197, 24);
-} /*# sourceMappingURL=root.css.map */
+}/*# sourceMappingURL=root.css.map */
