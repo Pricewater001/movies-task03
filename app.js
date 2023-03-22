@@ -101,7 +101,7 @@ async function searchValue(e) {
 
     const span2 = document.createElement("span");
     span2.classList.add("card-rate");
-    span2.textContent = newData.results[index].vote_average;
+    span2.textContent = newData.results[index].release_date;
 
     heroCard.appendChild(span2);
 
@@ -189,7 +189,7 @@ async function showCategory(genres) {
 
       const span2 = document.createElement("span");
       span2.classList.add("card-rate");
-      span2.textContent = newData.results[index].vote_average;
+      span2.textContent = newData.results[index].release_date;
 
       heroCard.appendChild(span2);
 
@@ -256,7 +256,7 @@ async function showTrending() {
 
       const p1 = document.createElement("p");
       p1.classList.add("carousel-description");
-      p1.textContent = trendsMovies.results[number].overview;
+      // p1.textContent = trendsMovies.results[number].overview;
       divDetals[index].appendChild(p1);
       divs[index].appendChild(divDetals[index]);
     }

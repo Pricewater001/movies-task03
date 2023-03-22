@@ -58,7 +58,7 @@
   background-repeat: no-repeat;
   background-position: 10px 10px;
   background-size: 20px 20px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(187, 38, 73, 0.4);
   border-radius: 5px;
   width: 300px;
   padding: 0.5em 1em 0.5em 2.5em;
@@ -168,18 +168,19 @@
   position: absolute;
   bottom: 5rem;
   left: 4rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(187, 38, 73, 0.4);
   padding: 1rem;
   border-radius: 1rem;
   z-index: 4;
 }
 .container .slides .slide-image .carousel-detalis .carousel-title {
-  color: white;
+  color: rgb(241, 237, 237);
   margin: 1rem;
+  font-size: 1.2rem;
 }
 .container .slides .slide-image .carousel-detalis .carousel-description {
   width: 90vh;
-  color: white;
+  color: rgb(241, 237, 237);
 }
 .container .slides .carousel-dots {
   position: absolute;
@@ -224,7 +225,7 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   top: 50%;
   cursor: pointer;
   transform: translateY(-50%);
-  background-color: azure;
+  background-color: #be3455;
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -244,7 +245,7 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   top: 50%;
   cursor: pointer;
   transform: translateY(-50%);
-  background-color: azure;
+  background-color: #be3455;
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -274,12 +275,13 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   margin: 1rem;
   cursor: pointer;
   position: relative;
-  box-shadow: 5px 5px 5px grey;
+  padding: 0.8rem;
+  background-color: rgba(187, 38, 73, 0.4);
   border-radius: 1rem;
 }
 .hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover {
   position: absolute;
-  background-color: gray;
+  background-color: #1e1e1e;
   width: auto;
   bottom: 4rem;
   border-radius: 1rem;
@@ -289,7 +291,7 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
 }
 .hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover::before {
   content: "";
-  border-color: grey transparent transparent;
+  border-color: #1e1e1e transparent transparent;
   border-style: solid;
   border-width: 10px;
   width: 0;
@@ -299,9 +301,8 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   left: 20px;
 }
 .hero .hero-sections .hero-sction-inner .hero-sction .hero-card span {
-  color: green;
+  color: rgb(241, 237, 237);
   margin-left: 6px;
-  text-shadow: 4px 4px 5px grey;
   max-width: 9rem;
   overflow: hidden;
   white-space: nowrap;
@@ -313,7 +314,7 @@ input#img-3:checked ~ .carousel-dots label#img-dot-3 {
 .hero .hero-sections .hero-sction-inner .hero-sction .hero-card .slide-image-inner {
   width: 150px;
   height: 250px;
-  border-radius: 22px;
+  border-radius: 10px;
 }
 .hero .hero-sections .hero-sction-inner .hero-sction::-webkit-scrollbar {
   display: none;
@@ -338,7 +339,7 @@ body.toggle .section {
 }
 
 body {
-  background: #f5f6fa;
+  background: #1e1e1e;
   min-width: 350px;
 }
 
