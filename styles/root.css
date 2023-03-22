@@ -1,5 +1,6 @@
 .wrapper .sidebar {
-  background: black;
+  background: #1e1e1e;
+  border-right: 1px solid #be3455;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,15 +15,15 @@
 .wrapper .sidebar ul li a {
   display: block;
   padding: 13px 30px;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid rgba(187, 38, 73, 0.4);
   color: rgb(241, 237, 237);
   font-size: 16px;
   position: relative;
 }
 .wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a:active {
-  color: #0c7db1;
+  color: #be3455;
   background: white;
-  border-right: 2px solid rgb(5, 68, 104);
+  border-right: 2px solid rgba(187, 38, 73, 0.4);
 }
 
 .section {
@@ -31,7 +32,7 @@
   transition: all 0.5s ease;
 }
 .section .top_navbar {
-  background: rgb(7, 105, 185);
+  background: #1e1e1e;
   height: 50px;
   display: flex;
   align-items: center;
@@ -42,7 +43,7 @@
   font-size: 16px;
   line-height: 1.5;
   border: none;
-  background: #FFFFFF;
+  background: rgba(187, 38, 73, 0.4);
   background-image: url("../../asset/images/search.png");
   background-repeat: no-repeat;
   background-position: 10px 10px;
@@ -53,25 +54,26 @@
   padding: 0.5em 1em 0.5em 2.5em;
 }
 .section .top_navbar .input-search::-moz-placeholder {
-  color: #838D99;
+  color: #838d99;
 }
 .section .top_navbar .input-search::placeholder {
-  color: #838D99;
+  color: #838d99;
 }
 .section .top_navbar .input-search:focus {
   outline: none;
-  box-shadow: 0 4px 10px 0 rgba(20, 187, 106, 0.16);
+  box-shadow: 0 4px 10px 0 rgba(187, 38, 73, 0.4);
 }
 .section .top_navbar .hamburger a {
   font-size: 28px;
-  color: #f4fbff;
+  color: #be3455;
 }
 .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
+  color: rgba(187, 38, 73, 0.4);
 }
 
 .container {
-  background: #fff;
+  color: rgb(241, 237, 237);
+  background: #1e1e1e;
   line-height: 28px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -108,7 +110,7 @@
   z-index: 999;
   font-size: 100px;
   line-height: 600px;
-  color: #fff;
+  color: #be3455;
 }
 .container .slides .slide-container .carousel-controls label {
   display: none;
@@ -158,7 +160,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #be3455;
   opacity: 0.5;
   margin: 10px;
   cursor: pointer;
@@ -189,12 +191,12 @@ body.toggle .section {
 }
 
 body {
-  background: #f5f6fa;
+  background: #1e1e1e;
   min-width: 350px;
 }
 .movie {
   display: flex;
-  padding: 3.2rem;
+  padding: 2rem;
 }
 .movie .imgBox img {
   width: 20rem;
@@ -205,5 +207,52 @@ body {
 .movie .txtBox h3 span {
   font-weight: 100;
   font-size: 1rem;
-  color: grey;
+  color: #838d99;
+}
+.movie .txtBox .ratingBox {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+}
+.movie .txtBox .ratingBox .lightTxt {
+  font-size: 1rem;
+  color: #838d99;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+.movie .txtBox .ratingBox .flex {
+  display: flex;
+  gap: 0.5rem;
+}
+.movie .txtBox .ratingBox .flex .rateStar {
+  font-size: 1.8rem;
+  color: rgb(245, 197, 24);
+}
+
+.ratings-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ratings span {
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+}
+.ratings span:hover {
+  color: rgb(245, 197, 24);
+}
+.ratings span:hover ~ span {
+  color: rgb(245, 197, 24);
+}
+.ratings span[data-clicked] {
+  color: rgb(245, 197, 24);
+}
+.ratings span[data-clicked] ~ span {
+  color: rgb(245, 197, 24);
 }/*# sourceMappingURL=root.css.map */

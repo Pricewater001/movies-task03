@@ -22,11 +22,9 @@ body.toggle .section {
 }
 
 body {
-  background: #f5f6fa;
+  background: $primary-color;
   min-width: 350px;
 
   @include breakpoints(mobile) {
-   
   }
 }
-

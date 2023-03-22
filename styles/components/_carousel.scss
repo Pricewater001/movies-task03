@@ -1,5 +1,6 @@
 .container {
-  background: #fff;
+  color: $text-color;
+  background: $primary-color;
   line-height: 28px;
   user-select: none;
 
@@ -58,7 +59,7 @@
         z-index: 999;
         font-size: 100px;
         line-height: 600px;
-        color: #fff;
+        color: $main-color;
 
         .prev-slide {
           width: 49%;
@@ -103,7 +104,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background-color: #ffffff;
+        background-color: $main-color;
         opacity: 0.5;
         margin: 10px;
         cursor: pointer;
@@ -112,12 +113,8 @@
   }
 }
 
-
-
-
-
-input#img-1:checked~.carousel-dots label#img-dot-1,
-input#img-2:checked~.carousel-dots label#img-dot-2,
-input#img-3:checked~.carousel-dots label#img-dot-3 {
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   opacity: 1;
 }

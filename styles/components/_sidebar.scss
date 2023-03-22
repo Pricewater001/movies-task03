@@ -3,6 +3,7 @@
 .wrapper {
   .sidebar {
     background: $primary-color;
+    border-right: 1px solid $main-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,19 +19,18 @@
         a {
           display: block;
           padding: 13px 30px;
-          border-bottom: 1px solid #10558d;
-          color: rgb(241, 237, 237);
+          border-bottom: 1px solid $secondery-color;
+          color: $text-color;
           font-size: 16px;
           position: relative;
           &:hover,
           &:active {
-            color: #0c7db1;
+            color: $main-color;
             background: white;
-            border-right: 2px solid rgb(5, 68, 104);
+            border-right: 2px solid $secondery-color;
           }
         }
       }
     }
   }
 }
-
