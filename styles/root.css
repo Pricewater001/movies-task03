@@ -1,5 +1,6 @@
-.wrapper .sidebar {
-  background: black;
+.sidebar {
+  background: #1e1e1e;
+  border-right: 1px solid #be3455;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,21 +9,31 @@
   padding: 20px 0;
   transition: all 0.5s ease;
 }
-.wrapper .sidebar .logo {
+.sidebar .logo {
   padding: 2rem;
 }
-.wrapper .sidebar ul li a {
+.sidebar ul {
+  overflow: scroll;
+  height: 80vh;
+}
+.sidebar ul::-webkit-scrollbar {
+  display: none;
+}
+.sidebar ul li {
+  cursor: pointer;
+}
+.sidebar ul li a {
   display: block;
   padding: 13px 30px;
-  border-bottom: 1px solid #10558d;
+  border-bottom: 1px solid rgba(187, 38, 73, 0.4);
   color: rgb(241, 237, 237);
   font-size: 16px;
   position: relative;
 }
-.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a:active {
-  color: #0c7db1;
+.sidebar ul li a:hover, .sidebar ul li a:active {
+  color: #be3455;
   background: white;
-  border-right: 2px solid rgb(5, 68, 104);
+  border-right: 2px solid rgba(187, 38, 73, 0.4);
 }
 
 .section {
@@ -31,7 +42,7 @@
   transition: all 0.5s ease;
 }
 .section .top_navbar {
-  background: rgb(7, 105, 185);
+  background: #1e1e1e;
   height: 50px;
   display: flex;
   align-items: center;
@@ -42,36 +53,42 @@
   font-size: 16px;
   line-height: 1.5;
   border: none;
-  background: #FFFFFF;
+  background: rgba(187, 38, 73, 0.4);
   background-image: url("../../asset/images/search.png");
   background-repeat: no-repeat;
   background-position: 10px 10px;
   background-size: 20px 20px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px 0 rgba(187, 38, 73, 0.4);
   border-radius: 5px;
   width: 300px;
   padding: 0.5em 1em 0.5em 2.5em;
 }
+@media (max-width: 767px) {
+  .section .top_navbar .input-search {
+    width: 11rem;
+  }
+}
 .section .top_navbar .input-search::-moz-placeholder {
-  color: #838D99;
+  color: #838d99;
 }
 .section .top_navbar .input-search::placeholder {
-  color: #838D99;
+  color: #838d99;
 }
 .section .top_navbar .input-search:focus {
   outline: none;
-  box-shadow: 0 4px 10px 0 rgba(20, 187, 106, 0.16);
+  box-shadow: 0 4px 10px 0 rgba(187, 38, 73, 0.4);
 }
 .section .top_navbar .hamburger a {
   font-size: 28px;
-  color: #f4fbff;
+  color: #be3455;
 }
 .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
+  color: rgba(187, 38, 73, 0.4);
 }
 
 .container {
-  background: #fff;
+  color: rgb(241, 237, 237);
+  background: #1e1e1e;
   line-height: 28px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -105,10 +122,10 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 4;
   font-size: 100px;
-  line-height: 600px;
-  color: #fff;
+  line-height: 367px;
+  color: #be3455;
 }
 .container .slides .slide-container .carousel-controls label {
   display: none;
@@ -144,6 +161,26 @@
   width: auto;
   min-width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.container .slides .slide-image .carousel-detalis {
+  position: absolute;
+  bottom: 5rem;
+  left: 4rem;
+  background-color: rgba(187, 38, 73, 0.4);
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 4;
+}
+.container .slides .slide-image .carousel-detalis .carousel-title {
+  color: rgb(241, 237, 237);
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+.container .slides .slide-image .carousel-detalis .carousel-description {
+  width: 90vh;
+  color: rgb(241, 237, 237);
 }
 .container .slides .carousel-dots {
   position: absolute;
@@ -158,7 +195,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #be3455;
   opacity: 0.5;
   margin: 10px;
   cursor: pointer;
@@ -168,6 +205,119 @@ input#img-1:checked ~ .carousel-dots label#img-dot-1,
 input#img-2:checked ~ .carousel-dots label#img-dot-2,
 input#img-3:checked ~ .carousel-dots label#img-dot-3 {
   opacity: 1;
+}
+
+.hero .hero-sections {
+  margin: 2rem;
+  margin: 0rem 4rem;
+}
+.hero .hero-sections .hero-section-category {
+  margin: 1rem 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+.hero .hero-sections .hero-sction-inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.hero .hero-sections .hero-sction-inner .right {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background-color: #be3455;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index: 8;
+  right: 0;
+}
+.hero .hero-sections .hero-sction-inner .right::after {
+  content: ">";
+}
+@media (max-width: 767px) {
+  .hero .hero-sections .hero-sction-inner .right {
+    display: none;
+  }
+}
+.hero .hero-sections .hero-sction-inner .left {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  background-color: #be3455;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  z-index: 8;
+  left: 0;
+}
+.hero .hero-sections .hero-sction-inner .left::after {
+  content: "<";
+}
+@media (max-width: 767px) {
+  .hero .hero-sections .hero-sction-inner .left {
+    display: none;
+  }
+}
+.hero .hero-sections .hero-sction-inner .hero-sction {
+  margin: 1rem 0rem;
+  width: 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.8rem;
+  background-color: rgba(187, 38, 73, 0.4);
+  border-radius: 1rem;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover {
+  position: absolute;
+  background-color: #1e1e1e;
+  width: auto;
+  bottom: 4rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  z-index: 5;
+  display: none;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .title-hover::before {
+  content: "";
+  border-color: #1e1e1e transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card span {
+  color: rgb(241, 237, 237);
+  margin-left: 6px;
+  max-width: 9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card span:hover ~ .title-hover {
+  display: block;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction .hero-card .slide-image-inner {
+  width: 150px;
+  height: 250px;
+  border-radius: 10px;
+}
+.hero .hero-sections .hero-sction-inner .hero-sction::-webkit-scrollbar {
+  display: none;
 }
 
 * {
@@ -189,35 +339,71 @@ body.toggle .section {
 }
 
 body {
-  background: #f5f6fa;
+  background: #1e1e1e;
   min-width: 350px;
+
+}
+
+.movie {
+  display: flex;
+  padding: 2rem;
+}
+.movie .imgBox img {
+  width: 20rem;
+}
+.movie .txtBox {
+  margin-left: 1.2rem;
+}
+.movie .txtBox h3 span {
+  font-weight: 100;
+  font-size: 1rem;
+  color: #838d99;
+}
+.movie .txtBox .ratingBox {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+}
+.movie .txtBox .ratingBox .lightTxt {
+  font-size: 1rem;
+  color: #838d99;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+.movie .txtBox .ratingBox .flex {
+  display: flex;
+  gap: 0.5rem;
+}
+.movie .txtBox .ratingBox .flex .rateStar {
+  font-size: 1.8rem;
+  color: rgb(245, 197, 24);
+}
+
+.ratings-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ratings span {
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+}
+.ratings span:hover {
+  color: rgb(245, 197, 24);
+}
+.ratings span:hover ~ span {
+  color: rgb(245, 197, 24);
+}
+.ratings span[data-clicked] {
+  color: rgb(245, 197, 24);
+}
+.ratings span[data-clicked] ~ span {
+  color: rgb(245, 197, 24);
 }/*# sourceMappingURL=root.css.map */
 
-
-/* movies list style starts here */
-
- .movie-list { padding-block-start: 32px; }
-
- .movie-card {
-   position: relative;
-   width: 200px;
- }
- 
- .movie-card .card-banner { width: 200px; }
- 
- .movie-card .title {
-   width: 100%;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   margin-block: 8px 4px;
- }
- 
- .movie-card .meta-list { justify-content: space-between; }
- 
- .movie-card .card-btn {
-   position: absolute;
-   inset: 0;
- }
- 
- /*  movies list style ends here */
