@@ -20,16 +20,22 @@
       background-repeat: no-repeat;
       background-position: 10px 10px;
       background-size: 20px 20px;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 4px 0 $input-search-shadow-color-light;
       border-radius: 5px;
       width: 300px;
-      padding: 0.5em 1em 0.5em 2.5em;
+      padding: .5em 1em .5em 2.5em;
+
+      @include breakpoints(mobile) {
+        width: 11rem;
+      }
+
       &::placeholder {
         color: $grey-color;
       }
       &:focus {
         outline: none;
         box-shadow: 0 4px 10px 0 $secondery-color;
+
       }
     }
     .hamburger {
@@ -38,6 +44,7 @@
         color: $main-color;
         &:hover {
           color: $secondery-color;
+
         }
       }
     }

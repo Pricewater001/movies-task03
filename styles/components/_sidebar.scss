@@ -11,17 +11,21 @@
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
+ 
     .logo {
       padding: 2rem;
     }
+
     ul {
       overflow: scroll;
       height: 80vh;
       &::-webkit-scrollbar {
         display: none;
       }
+      
       li {
         cursor: pointer;
+
         a {
           display: block;
           padding: 13px 30px;
@@ -29,11 +33,13 @@
           color: $text-color;
           font-size: 16px;
           position: relative;
+
           &:hover,
           &:active {
             color: $main-color;
             background: white;
             border-right: 2px solid $secondery-color;
+
           }
         }
       }
