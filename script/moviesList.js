@@ -1,5 +1,5 @@
 const apiKey = 'e5142e8773e78c96e4e7ae66cab816fc';
-const genre = 'comedy';
+const genre = '80';
     const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genre}`;
 
     fetch(apiUrl)
