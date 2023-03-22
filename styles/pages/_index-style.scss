@@ -23,9 +23,6 @@ body.toggle .section {
 }
 
 body {
-  background: $primary-color;
+ background: $background-body-color-light;
   min-width: 350px;
-
-  @include breakpoints(mobile) {
-  }
 }
